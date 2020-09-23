@@ -1,0 +1,50 @@
+#my first solution
+import random
+x = random.randint(1,50)
+
+n = 6
+while n > 0:
+    guessed_n = int(input('Please, enter your number from 1 to 50'))
+    if guessed_n > x:
+        print('My number is smaller. Try again')
+    if guessed_n < x:
+        print('My number is bigger. Try again')
+    else:
+        print('You guessed')
+        break
+    n = n-1
+    
+#my elaborated solution
+import random
+x = random.randint(1,50)
+
+n = 0
+while n < 6:
+    n += 1
+    guessed_n = int(input('Please, enter your number from 1 to 50'))
+    if guessed_n > x:
+        print(f'My number is smaller. You have left {6-n} trials')
+    if guessed_n < x:
+        print(f'My number is bigger. You have left {6-n} trials')
+    if guessed_n < x and n == 5:
+        print('My number is bigger. It\'s your last chance')
+    if guessed_n < x and n == 6:
+        print('You lost')
+    if guessed_n == x:
+        print(f'You guessed from {n} trial')
+        break
+
+import random
+x = random.randint(1,50)
+
+n = 6
+while n > 0:
+    guessed_n = int(input('Please, enter your number from 1 to 50'))
+    if guessed_n > x:
+        print('My number is smaller. Try again')
+    elif guessed_n < x:
+        print('My number is bigger. Try again')
+    else:
+        print('You guessed')
+        break
+    n = n-1
