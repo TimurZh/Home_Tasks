@@ -1,0 +1,40 @@
+#Teacher's option
+player_turn = 1
+def sticks1():
+    number = 10
+    while number > 0:
+        player = int(input('please select one to three sticks. You take \n'))
+        if player >3:
+            print('you are allowed to take 1,2 or 3 sticks. Try again\n')
+            continue
+        number -= player
+        if number <= 0:
+            print(f'Player {player_turn} lost')
+        else:
+            print("now other player's turn\n")
+player_turn = 1 if player_turn ==2 else 2
+
+#Teacher vers2
+number_of_sticks = 10
+player_turn = 1
+
+def can_take(sticks):
+    return sticks >=1 and sticks <=3
+def switch_player_turn(turn):
+    return 1 if player_turn == 2 else 2
+def end_of_game(sticks):
+    return number_of_sticks <=0
+
+while (not end_of_game(number_of_sticks)):
+    print(f'How many sticks you take? Remining {number_of_sticks}')
+    taken = int(input())
+    
+    if not can_take(taken):
+        print(f'You tried to take {taken}. Allowed 1,2 or3')
+        continue
+    number_of_sticks-=taken
+    print(f'Sticks taken: {taken}\n')
+    if end_of_game(number_of_sticks):
+        print(f'No more sticks in the game \nPlayer {player_turn} has lost')
+        break
+player_turn = 1 if player_turn ==2 else 2
