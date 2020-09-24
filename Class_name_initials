@@ -1,0 +1,12 @@
+class Name:
+    def __init__(self, name, surname):
+        self.name=name.lower().capitalize()
+        self.surname=surname.lower().capitalize()
+        self.full_name=self.name +" "+ self.surname
+        self.initials=self.name[0]+"."+self.surname[0]+"."
+        
+a1=Name('jOhn', 'smitH')
+print(a1.name)
+print(a1.surname)
+print(a1.full_name)
+print(a1.initials)
