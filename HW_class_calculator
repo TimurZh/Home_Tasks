@@ -8,3 +8,9 @@ class Calculator:
         return x*y
     def divide(self,x,y):
         return x/y
+
+a=Calculator()
+print(a.add(30,15))
+print(a.subtract(30,15))
+print(a.multiply(30,15))
+print(a.divide(30,15))
