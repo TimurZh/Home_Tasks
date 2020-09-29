@@ -1,0 +1,17 @@
+class Employee():
+    def __init__(self, first_name, last_name, salary):
+        self.first_name=first_name
+        self.last_name=last_name
+        self.salary=salary
+        
+    @classmethod    
+    def from_string(cls, string_to_parse):
+        data = string_to_parse.split('-')
+        return cls(data[0], data[1], data[2])
+        #first_name, last_name, salary = string_to_parse.split('-')
+        #return cls(first_name, last_name, int(salary))
+
+emp1=Employee.from_string('Ilze-Magone-1000')
+print(emp1.last_name)
+print(emp1.first_name)
+print(emp1.salary)
