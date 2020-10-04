@@ -1,0 +1,13 @@
+import math
+class Circle:
+    def __init__(self,radius=0):
+        self.radius=radius
+        
+    def get_area(self):
+        return self.radius**2*math.pi
+    def get_perimetr(self):
+        return 2*math.pi*self.radius
+        
+c1=Circle(10)
+c1.get_area()
+c1.get_perimetr()
