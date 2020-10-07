@@ -1,0 +1,20 @@
+class Beverages:
+    def __init__(self, ingredients):
+        self.ingredients=ingredients
+        self.cost = sum([prices[fruit] for fruit in self.ingredients]) 
+        self.price = self.cost *2.5
+    
+    def get_cost(self):
+        return f'${self.cost:.2f}'
+    
+    def get_price(self):
+        return f'${self.price:.2f}'
+    
+    def get_name(self):
+        lst=sorted([i.replace ('ies', 'y') for i in self.ingredients])
+        return f'{"  ".join(lst)}{"Fusion" if len(lst)>1 else "Smoothie"}'
+        
+dr1=Beverages(["Mango"])
+print(dr1.get_cost())
+print(dr1.get_price())
+print(dr1.get_name())        
