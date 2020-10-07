@@ -12,7 +12,7 @@ class Beverages:
     
     def get_name(self):
         lst=sorted([i.replace ('ies', 'y') for i in self.ingredients])
-        return f'{"  ".join(lst)}{"Fusion" if len(lst)>1 else "Smoothie"}'
+        return f'{"  ".join(lst)} {"Fusion" if len(lst)>1 else "Smoothie"}'
         
 dr1=Beverages(["Mango"])
 print(dr1.get_cost())
