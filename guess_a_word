@@ -1,0 +1,32 @@
+import random
+lives = 9
+words = ["азарт", "бухта", "вираж", "дупло", "веник", "питон", "папа", "звезда", "компютер"]
+secret_word = random.choice(words)
+clue = ["?"] * len(secret_word)
+symbol = "☯"
+game = True
+print(secret_word)
+
+while game:
+    print("".join(clue))
+    print("Осталось жизней: ", symbol * lives)
+    answer = input("Введите букву или всё слово: ")
+    
+    if answer == secret_word:
+        print("Вы победили! Вы угaдали ответ - ", answer)
+        game = False
+    else:
+        if len(answer) == 1 and answer in secret_word:
+            print("Вы угадали букву! ")
+            for index in range(len(secret_word)):
+                if answer == secret_word[index]:
+                    clue[index] = answer
+            if secret_word == "".join(clue):
+                print("Вы победили! Вы угaдали ответ - ", answer)
+                game = False
+        else:
+            print("Вы потеряли жизнь! ")
+            lives -= 1
+            if lives == 0:
+                print("Вы к сожалению проиграли! ")
+                game = False
